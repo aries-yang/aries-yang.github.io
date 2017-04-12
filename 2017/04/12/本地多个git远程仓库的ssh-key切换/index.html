@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Hexo</title>
+  <title>本地多个git远程仓库的ssh-key切换 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="最近在用gitpage部署博客时，发现一个ssh-key只能在一个github账号上使用（之前只有一个账号），现在因为工作需要有多个账号，所以需要对git 进行多个账号之间的切换。首先看看本地有几个key 1$ cd .ssh 12-rw-------  1 yang yang  1679 12月 14 10:25 id_rsa-rw-r--r--  1 yang yang   404 12月 1">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/04/12/hello-world/index.html">
+<meta property="og:title" content="本地多个git远程仓库的ssh-key切换">
+<meta property="og:url" content="http://yoursite.com/2017/04/12/本地多个git远程仓库的ssh-key切换/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-04-12T06:05:33.905Z">
+<meta property="og:description" content="最近在用gitpage部署博客时，发现一个ssh-key只能在一个github账号上使用（之前只有一个账号），现在因为工作需要有多个账号，所以需要对git 进行多个账号之间的切换。首先看看本地有几个key 1$ cd .ssh 12-rw-------  1 yang yang  1679 12月 14 10:25 id_rsa-rw-r--r--  1 yang yang   404 12月 1">
+<meta property="og:image" content="http://evercredit.oss-cn-beijing.aliyuncs.com/github.png">
+<meta property="og:updated_time" content="2017-04-12T07:51:25.137Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="本地多个git远程仓库的ssh-key切换">
+<meta name="twitter:description" content="最近在用gitpage部署博客时，发现一个ssh-key只能在一个github账号上使用（之前只有一个账号），现在因为工作需要有多个账号，所以需要对git 进行多个账号之间的切换。首先看看本地有几个key 1$ cd .ssh 12-rw-------  1 yang yang  1679 12月 14 10:25 id_rsa-rw-r--r--  1 yang yang   404 12月 1">
+<meta name="twitter:image" content="http://evercredit.oss-cn-beijing.aliyuncs.com/github.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,35 +156,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-本地多个git远程仓库的ssh-key切换" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      本地多个git远程仓库的ssh-key切换
     </h1>
   
 
         
-        <a href="/2017/04/12/hello-world/" class="archive-article-date">
-  	<time datetime="2017-04-12T06:05:33.905Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
+        <a href="/2017/04/12/本地多个git远程仓库的ssh-key切换/" class="archive-article-date">
+  	<time datetime="2017-04-12T06:29:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>最近在用gitpage部署博客时，发现一个ssh-key只能在一个github账号上使用（之前只有一个账号），现在因为工作需要有多个账号，所以需要对git 进行多个账号之间的切换。<br>首先看看本地有几个key</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> .ssh</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">-rw-------  1 yang yang  1679 12月 14 10:25 id_rsa</div><div class="line">-rw-r--r--  1 yang yang   404 12月 14 10:25 id_rsa.pub</div></pre></td></tr></table></figure>
+<p>现在生成第二个ssh-key<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">'yang-aries@126.com'</span> <span class="_">-f</span> id_rsa_first</div></pre></td></tr></table></figure></p>
+<p>生成后将新的ssh public key添加到内部的gitlab仓库中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-rw-------  1 yang yang  1679 12月 14 10:25 id_rsa</div><div class="line">-rw-r--r--  1 yang yang   404 12月 14 10:25 id_rsa.pub</div><div class="line">-rw-------  1 yang yang  1675 4月  12 15:02 id_rsa_first</div><div class="line">-rw-r--r--  1 yang yang   400 4月  12 15:02 id_rsa_first.pub</div></pre></td></tr></table></figure></p>
+<p>下面就是最关键一步，在～/.ssh目录下创建config新文件，该文件用于配置私钥对应的服务器。内容如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Worker GitHub</span></div><div class="line">    Host git.oschina.net  </div><div class="line">    HostName git.oschina.net</div><div class="line">    Port 22</div><div class="line">    User git</div><div class="line">        IdentityFile /home/yang/.ssh/id_rsa</div><div class="line"><span class="comment"># blog aries-yang</span></div><div class="line">    Host blog.github.com  <span class="comment">##可以随意起名字，但是链接远程仓库时需要用到此Host</span></div><div class="line">    HostName github.com</div><div class="line">    Port 22</div><div class="line">    User git</div><div class="line">    IdentityFile /home/yang/.ssh/id_rsa_first <span class="comment">##链接远程仓库时，对应的ssh-key密钥</span></div></pre></td></tr></table></figure></p>
+<p>其中上面的config文件中有个一坑就是Host,下面举例说明<br>下面是我的github给出的ssh地址<br><img src="http://evercredit.oss-cn-beijing.aliyuncs.com/github.png" alt="github"><br>但是在我gitclone之后，修改并提交时，提示下面的错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ ~/Desktop/aries-yang.github.io$ git push</div><div class="line">ERROR: Permission to aries-yang/aries-yang.github.io.git denied to yqyily.</div><div class="line">fatal: Could not <span class="built_in">read</span> from remote repository.</div><div class="line"></div><div class="line">Please make sure you have the correct access rights</div><div class="line">and the repository exists.</div><div class="line">$ ~/Desktop/aries-yang.github.io$</div></pre></td></tr></table></figure></p>
+<p>为什么呢，因为这时候你提交代码的密钥和该仓库的公钥不是对应的，虽然我们配置了ssh-key，但是远程仓库的地址不对，这时候的仓库地址是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ~/Desktop/aries-yang.github.io$ git remote -v</div><div class="line">origin  git@github.com:aries-yang/aries-yang.github.io.git (fetch)</div><div class="line">origin  git@github.com:aries-yang/aries-yang.github.io.git (push)</div><div class="line">$ ~/Desktop/aries-yang.github.io$</div></pre></td></tr></table></figure>
+<p>正确的应该是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote <span class="built_in">set</span>-url --add origin git@blog.github.com:aries-yang/aries-yang.github.io.git  <span class="comment">## 其中blog.github.com一定要和config文件中的Host一致</span></div></pre></td></tr></table></figure>
 
       
 
@@ -262,7 +266,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/12/hello-world/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/12/本地多个git远程仓库的ssh-key切换/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,11 +280,15 @@
   
 <nav id="article-nav">
   
-  
-    <a href="/2017/04/12/本地多个git远程仓库的ssh-key切换/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">本地多个git远程仓库的ssh-key切换</div>
-      <i class="icon-circle-right"></i>
+    <a href="/2017/04/12/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
     </a>
+  
   
 </nav>
 

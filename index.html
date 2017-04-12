@@ -45,7 +45,7 @@
 			<img src="null" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		  <h1 class="header-author"><a href="/">aries-yang</a></h1>
 		</hgroup>
 		
 
@@ -103,7 +103,7 @@
 				<img src="null" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">John Doe</h1>
+			  <h1 class="header-author js-header-author">aries-yang</h1>
 			</hgroup>
 			
 			
@@ -150,6 +150,67 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-本地多个git远程仓库的ssh-key切换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/12/本地多个git远程仓库的ssh-key切换/">本地多个git远程仓库的ssh-key切换</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/12/本地多个git远程仓库的ssh-key切换/" class="archive-article-date">
+  	<time datetime="2017-04-12T06:29:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在用gitpage部署博客时，发现一个ssh-key只能在一个github账号上使用（之前只有一个账号），现在因为工作需要有多个账号，所以需要对git 进行多个账号之间的切换。<br>首先看看本地有几个key</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> .ssh</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">-rw-------  1 yang yang  1679 12月 14 10:25 id_rsa</div><div class="line">-rw-r--r--  1 yang yang   404 12月 14 10:25 id_rsa.pub</div></pre></td></tr></table></figure>
+<p>现在生成第二个ssh-key<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">'yang-aries@126.com'</span> <span class="_">-f</span> id_rsa_first</div></pre></td></tr></table></figure></p>
+<p>生成后将新的ssh public key添加到内部的gitlab仓库中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-rw-------  1 yang yang  1679 12月 14 10:25 id_rsa</div><div class="line">-rw-r--r--  1 yang yang   404 12月 14 10:25 id_rsa.pub</div><div class="line">-rw-------  1 yang yang  1675 4月  12 15:02 id_rsa_first</div><div class="line">-rw-r--r--  1 yang yang   400 4月  12 15:02 id_rsa_first.pub</div></pre></td></tr></table></figure></p>
+<p>下面就是最关键一步，在～/.ssh目录下创建config新文件，该文件用于配置私钥对应的服务器。内容如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Worker GitHub</span></div><div class="line">    Host git.oschina.net  </div><div class="line">    HostName git.oschina.net</div><div class="line">    Port 22</div><div class="line">    User git</div><div class="line">        IdentityFile /home/yang/.ssh/id_rsa</div><div class="line"><span class="comment"># blog aries-yang</span></div><div class="line">    Host blog.github.com  <span class="comment">##可以随意起名字，但是链接远程仓库时需要用到此Host</span></div><div class="line">    HostName github.com</div><div class="line">    Port 22</div><div class="line">    User git</div><div class="line">    IdentityFile /home/yang/.ssh/id_rsa_first <span class="comment">##链接远程仓库时，对应的ssh-key密钥</span></div></pre></td></tr></table></figure></p>
+<p>其中上面的config文件中有个一坑就是Host,下面举例说明<br>下面是我的github给出的ssh地址<br><img src="http://evercredit.oss-cn-beijing.aliyuncs.com/github.png" alt="github"><br>但是在我gitclone之后，修改并提交时，提示下面的错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ ~/Desktop/aries-yang.github.io$ git push</div><div class="line">ERROR: Permission to aries-yang/aries-yang.github.io.git denied to yqyily.</div><div class="line">fatal: Could not <span class="built_in">read</span> from remote repository.</div><div class="line"></div><div class="line">Please make sure you have the correct access rights</div><div class="line">and the repository exists.</div><div class="line">$ ~/Desktop/aries-yang.github.io$</div></pre></td></tr></table></figure></p>
+<p>为什么呢，因为这时候你提交代码的密钥和该仓库的公钥不是对应的，虽然我们配置了ssh-key，但是远程仓库的地址不对，这时候的仓库地址是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ~/Desktop/aries-yang.github.io$ git remote -v</div><div class="line">origin  git@github.com:aries-yang/aries-yang.github.io.git (fetch)</div><div class="line">origin  git@github.com:aries-yang/aries-yang.github.io.git (push)</div><div class="line">$ ~/Desktop/aries-yang.github.io$</div></pre></td></tr></table></figure>
+<p>正确的应该是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote <span class="built_in">set</span>-url --add origin git@blog.github.com:aries-yang/aries-yang.github.io.git  <span class="comment">## 其中blog.github.com一定要和config文件中的Host一致</span></div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/12/本地多个git远程仓库的ssh-key切换/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -220,7 +281,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 John Doe
+    		&copy; 2017 aries-yang
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
