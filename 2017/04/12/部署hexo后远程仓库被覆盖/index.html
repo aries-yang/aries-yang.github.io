@@ -6,14 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>部署hexo后远程仓库被覆盖 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="在部署hexo时遇到了一些坑，在这里和大家分享一下 1、github仓库的名称一定要和用户名保持一致只有两个名称一致时，访问页面地址才是仓库的名称 2、hexo在部署后会覆盖掉master的代码从上面可以看到里面多了一个Site updated:的提交，但是原来的源代码没有了。该问题的解决办法有两个方法一：使用2个不同的git仓库分别管理『博客源代码』和『博客部署代码』。其中『博客部署代码』的仓库">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="部署hexo后远程仓库被覆盖">
+<meta property="og:url" content="http://yoursite.com/2017/04/12/部署hexo后远程仓库被覆盖/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在部署hexo时遇到了一些坑，在这里和大家分享一下 1、github仓库的名称一定要和用户名保持一致只有两个名称一致时，访问页面地址才是仓库的名称 2、hexo在部署后会覆盖掉master的代码从上面可以看到里面多了一个Site updated:的提交，但是原来的源代码没有了。该问题的解决办法有两个方法一：使用2个不同的git仓库分别管理『博客源代码』和『博客部署代码』。其中『博客部署代码』的仓库">
+<meta property="og:image" content="http://evercredit.oss-cn-beijing.aliyuncs.com/blog-1.png">
+<meta property="og:image" content="http://evercredit.oss-cn-beijing.aliyuncs.com/blog-2.png">
+<meta property="og:updated_time" content="2017-04-12T09:13:01.112Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="部署hexo后远程仓库被覆盖">
+<meta name="twitter:description" content="在部署hexo时遇到了一些坑，在这里和大家分享一下 1、github仓库的名称一定要和用户名保持一致只有两个名称一致时，访问页面地址才是仓库的名称 2、hexo在部署后会覆盖掉master的代码从上面可以看到里面多了一个Site updated:的提交，但是原来的源代码没有了。该问题的解决办法有两个方法一：使用2个不同的git仓库分别管理『博客源代码』和『博客部署代码』。其中『博客部署代码』的仓库">
+<meta name="twitter:image" content="http://evercredit.oss-cn-beijing.aliyuncs.com/blog-1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -149,76 +157,146 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-部署hexo后远程仓库被覆盖" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      部署hexo后远程仓库被覆盖
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/12/部署hexo后远程仓库被覆盖/" class="archive-article-date">
+
+        
+        <a href="/2017/04/12/部署hexo后远程仓库被覆盖/" class="archive-article-date">
   	<time datetime="2017-04-12T08:29:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/12/部署hexo后远程仓库被覆盖/">部署hexo后远程仓库被覆盖</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在部署hexo时遇到了一些坑，在这里和大家分享一下</p>
+<h3 id="1、github仓库的名称一定要和用户名保持一致"><a href="#1、github仓库的名称一定要和用户名保持一致" class="headerlink" title="1、github仓库的名称一定要和用户名保持一致"></a>1、github仓库的名称一定要和用户名保持一致</h3><p><img src="http://evercredit.oss-cn-beijing.aliyuncs.com/blog-1.png" alt="blog"><br>只有两个名称一致时，访问页面地址才是仓库的名称</p>
+<h3 id="2、hexo在部署后会覆盖掉master的代码"><a href="#2、hexo在部署后会覆盖掉master的代码" class="headerlink" title="2、hexo在部署后会覆盖掉master的代码"></a>2、hexo在部署后会覆盖掉master的代码</h3><p><img src="http://evercredit.oss-cn-beijing.aliyuncs.com/blog-2.png" alt="blog"><br>从上面可以看到里面多了一个Site updated:的提交，但是原来的源代码没有了。该问题的解决办法有两个<br>方法一：使用2个不同的git仓库分别管理『博客源代码』和『博客部署代码』。其中『博客部署代码』的仓库名称要和github的账号名称一样<br>方法二：使用同一个git仓库的2个不同的git分支分别管理『博客源代码』和『博客部署代码』。不过比较有意思的是gitpage只部署master上的代码（也许我没找到设置部署其他分支的方法），如果我把部署后的代码分配到其它分支后，页面就报404错误，所以不得不把master分支留给部署代码，而源代码写在其它的分之上。<br>只要修改hexo的配置文件_config.yml,将『博客部署代码』部署到远程仓库的master分支<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: git@blog.github.com:aries-yang/aries-yang.github.io.git <span class="comment">##该地址是你git push时的地址，对于本地有多个ssh-key,这个地方容易出错</span></div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<h3 id="3、为hexo安装git插件"><a href="#3、为hexo安装git插件" class="headerlink" title="3、为hexo安装git插件"></a>3、为hexo安装git插件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p>否则会报 ERROR Deployer not found: git 的错误。</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/04/12/部署hexo后远程仓库被覆盖/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/12/本地多个git远程仓库的ssh-key切换/" class="archive-article-date">
-  	<time datetime="2017-04-12T06:29:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/12/本地多个git远程仓库的ssh-key切换/">本地多个git远程仓库的ssh-key切换</a>
-    </h1>
+    <a href="/2017/04/12/本地多个git远程仓库的ssh-key切换/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          本地多个git远程仓库的ssh-key切换
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -241,8 +319,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
